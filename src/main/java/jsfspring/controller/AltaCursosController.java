@@ -8,8 +8,8 @@ import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
 import jsfspring.dao.CursoMapper;
-import jsfspring.model.Curso;
-import jsfspring.model.builder.CursoBuilder;
+import jsfspring.bean.Curso;
+import jsfspring.bean.builder.CursoBuilder;
 
 
 @ManagedBean(name = "altaCursosController")
@@ -52,42 +52,52 @@ public class AltaCursosController {
 	}
 
 	public String getProfesor() {
-		return profesor;
+
+        return profesor;
 	}
 
 	public void setProfesor(String profesor) {
-		this.profesor = profesor;
+
+        this.profesor = profesor;
 	}
 
 	public String getTitulo() {
-		return titulo;
+
+        return titulo;
 	}
 
 	public void setTitulo(String titulo) {
-		this.titulo = titulo;
+
+        this.titulo = titulo;
 	}
 
 	public String getNivel() {
-		return nivel;
+
+        return nivel;
 	}
 
 	public void setNivel(String nivel) {
-		this.nivel = nivel;
+
+        this.nivel = nivel;
 	}
 
 	public Integer getHoras() {
-		return horas;
+
+        return horas;
 	}
 
 	public void setHoras(Integer horas) {
-		this.horas = horas;
+
+        this.horas = horas;
 	}
 
 	public boolean isActivo() {
-		return activo;
+
+        return activo;
 	}
 
 	public void setActivo(boolean activo) {
-		this.activo = activo;
+
+        this.activo = activo;
 	}
 }

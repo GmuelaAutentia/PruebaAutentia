@@ -3,12 +3,11 @@ package jsfspring.dao.impl;
 import java.io.Serializable;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import jsfspring.dao.CursoMapper;
-import jsfspring.model.Curso;
+import jsfspring.bean.Curso;
 
 @Repository
 public class CursoService implements CursoMapper, Serializable {
@@ -31,9 +30,9 @@ public class CursoService implements CursoMapper, Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Transactional
-	public List<Curso> listarCursos() {
+	public List<Curso> getListaCursos() {
 
-		return cursoMapper.listarCursos();
+		return cursoMapper.getListaCursos();
 	}
 
 	@Transactional

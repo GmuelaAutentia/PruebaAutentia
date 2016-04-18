@@ -1,7 +1,7 @@
 package jsfspring.dao.test;
 
 import jsfspring.dao.ProfesorMapper;
-import jsfspring.model.Profesor;
+import jsfspring.bean.Profesor;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

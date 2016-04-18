@@ -6,7 +6,6 @@ import static junit.framework.TestCase.assertNotNull;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.core.Is.is;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,12 +24,11 @@ public class CursoMapperIT {
     private CursoMapper cursoMapper;
 
     @Test
-    public void shouldReturnAListOfCursos(){
+    public void shouldReturnAListOfCursosWhenCallingListarCursos(){
 
-        List listaCursos = cursoMapper.listarCursos();
+        List listaCursos = cursoMapper.getListaCursos();
         assertNotNull(listaCursos);
         assertThat(listaCursos.size(), is(greaterThan(1)));
     }
-
 
 }

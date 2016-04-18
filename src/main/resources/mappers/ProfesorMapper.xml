@@ -1,7 +1,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="jsfspring.dao.ProfesorMapper">
 
-	<resultMap id="profesorResultMap" type="jsfspring.model.Profesor">
+	<resultMap id="profesorResultMap" type="jsfspring.bean.Profesor">
 		<id property="id" column="id_profesor" javaType="Long"/>
 		<result property="nombre" column="nombre" javaType="String"/>
 		<result property="apellido" column="apellido" javaType="String"/>

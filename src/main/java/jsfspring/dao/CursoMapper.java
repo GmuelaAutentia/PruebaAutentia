@@ -2,13 +2,11 @@ package jsfspring.dao;
 
 import java.util.List;
 
-import org.springframework.stereotype.Repository;
-
-import jsfspring.model.Curso;
+import jsfspring.bean.Curso;
 
 public interface CursoMapper {
 
-	List<Curso> listarCursos();
+	List<Curso> getListaCursos();
 	
 	void insert(Curso curso);
 }

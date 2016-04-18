@@ -1,6 +1,6 @@
-package jsfspring.model.builder;
+package jsfspring.bean.builder;
 
-import jsfspring.model.Curso;
+import jsfspring.bean.Curso;
 
 public class CursoBuilder {
 

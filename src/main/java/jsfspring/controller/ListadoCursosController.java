@@ -1,8 +1,7 @@
 package jsfspring.controller;
 
 import jsfspring.dao.CursoMapper;
-import jsfspring.model.Curso;
-import org.springframework.beans.factory.annotation.Autowired;
+import jsfspring.bean.Curso;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
@@ -25,7 +24,7 @@ public class ListadoCursosController implements Serializable {
     @PostConstruct
     public void init(){
 
-        this.cursos = cursoMapper.listarCursos();
+        this.cursos = cursoMapper.getListaCursos();
 
     }
 
@@ -46,7 +45,7 @@ public class ListadoCursosController implements Serializable {
 
     public void setCursos(List<Curso> cursos) {
 
-        this.cursos = cursoMapper.listarCursos();
+        this.cursos = cursoMapper.getListaCursos();
     }
 
 }

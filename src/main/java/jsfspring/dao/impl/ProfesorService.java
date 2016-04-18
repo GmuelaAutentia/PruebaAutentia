@@ -8,9 +8,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import jsfspring.dao.ProfesorMapper;
-import jsfspring.model.Profesor;
-
-import javax.faces.bean.ApplicationScoped;
+import jsfspring.bean.Profesor;
 
 @Repository
 public class ProfesorService implements ProfesorMapper, Serializable {
