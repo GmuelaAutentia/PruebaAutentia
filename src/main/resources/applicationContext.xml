@@ -13,12 +13,8 @@
 	
 	default-autowire="byName">
 
-	<context:annotation-config />
-	
-	<context:component-scan base-package="jsfspring" />
-	
-	
-	
+    <context:component-scan base-package="jsfspring.*"/>
+
 	<tx:annotation-driven />
 	
 	<bean name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
@@ -35,20 +31,13 @@
 	<bean  id="springManagedTransactionFactory" class="org.mybatis.spring.transaction.SpringManagedTransactionFactory" />
 	
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="mapperLocations" value="classpath:jsfspring/dao/mappers/*.xml" />
+		<property name="mapperLocations" value="classpath:mappers/*.xml" />
 		<property name="dataSource" ref="dataSource" />
 		<property name="transactionFactory" ref="springManagedTransactionFactory" />
 	</bean>
-		
-	<bean id="cursoMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
-		<property name="mapperInterface" value="jsfspring.dao.CursoMapper" />
-		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
-	</bean>
-	
-	<bean id="profesorMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
-		<property name="mapperInterface" value="jsfspring.dao.ProfesorMapper" />
-		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
-	</bean>
 
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="jsfspring.dao" />
+    </bean>
 </beans>
 

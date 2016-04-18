@@ -8,20 +8,28 @@ import javax.faces.bean.ViewScoped;
 
 public class Curso implements Serializable {
 
-	private static final long serialVersionUID = 1L;
-	
-	private boolean activo;
+	private Long id;
+	private Boolean activo;
 	private String titulo;
 	private String nivel;
 	private Integer horas;
 	private String profesor;
 
-	public Curso(boolean activo, String titulo, String nivel, Integer horas, String profesor) {
+	public Curso(Long id, Boolean activo, String titulo, String nivel, Integer horas, String profesor) {
+		this.id = id;
 		this.activo = activo;
 		this.titulo = titulo;
 		this.nivel = nivel;
 		this.horas = horas;
 		this.profesor = profesor;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Long getId() {
+		return id;
 	}
 
 	public boolean isActivo() {

@@ -8,6 +8,5 @@ import jsfspring.model.Profesor;
 
 public interface ProfesorMapper {
 
-	List<Profesor> listarProfesores();
-	
+	List<Profesor> getProfesores();
 }

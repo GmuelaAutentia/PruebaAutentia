@@ -2,48 +2,43 @@ package jsfspring.controller;
 
 import java.io.IOException;
 
-import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
 import jsfspring.dao.CursoMapper;
-import jsfspring.dao.impl.CursoMapperImpl;
 import jsfspring.model.Curso;
 import jsfspring.model.builder.CursoBuilder;
-import org.springframework.beans.factory.annotation.Autowired;
 
 
 @ManagedBean(name = "altaCursosController")
 @ViewScoped
 public class AltaCursosController {
 
-	@Autowired
-	CursoMapper cursoMapper;
+    @ManagedProperty(value = "#{cursoMapper}")
+	private CursoMapper cursoMapper;
 
-	CursoBuilder cursoBuilder;
+	private CursoBuilder cursoBuilder;
 
 	private boolean activo;
 	private String titulo;
 	private String nivel;
 	private Integer horas;
 	private String profesor;
-	
-	
+
+
 	public void darAltaCurso() throws IOException{
 
-        System.out.println(cursoMapper);
-
-		cursoBuilder = new CursoBuilder(this.titulo,this.nivel,this.horas);
+		cursoBuilder = new CursoBuilder(this.titulo, this.nivel, this.horas);
 
 		Curso curso = cursoBuilder.setActivo(this.activo)
                                   .setProfesor(this.profesor)
 				                  .build();
-			
+
 		cursoMapper.insert(curso);
 		FacesContext.getCurrentInstance().getExternalContext().redirect("listadoCursos.xhtml?i=1");
-		
+
 	}
 
 	public CursoMapper getCursoMapper() {

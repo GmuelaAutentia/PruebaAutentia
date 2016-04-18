@@ -11,13 +11,13 @@ import static org.mockito.Mockito.*;
 
 import java.util.ArrayList;
 import jsfspring.dao.CursoMapper;
-import jsfspring.dao.impl.CursoMapperImpl;
+import jsfspring.dao.impl.CursoService;
 import jsfspring.model.Curso;
 
 public class CursoMapperTest {
 
 	@InjectMocks
-	private CursoMapperImpl sut;
+	private CursoService sut;
 
 	@Mock
 	private CursoMapper cursoMapper;

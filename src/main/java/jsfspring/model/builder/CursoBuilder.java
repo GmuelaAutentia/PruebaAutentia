@@ -4,6 +4,7 @@ import jsfspring.model.Curso;
 
 public class CursoBuilder {
 
+    private Long id;
     private boolean activo;
     private String titulo;
     private String nivel;
@@ -18,7 +19,7 @@ public class CursoBuilder {
 
     public Curso build(){
 
-        return new Curso(this.activo,this.titulo,this.nivel,this.horas,this.profesor);
+        return new Curso(this.id, this.activo,this.titulo,this.nivel,this.horas,this.profesor);
 
     }
 

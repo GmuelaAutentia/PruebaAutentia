@@ -1,0 +1,30 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="jsfspring.dao.CursoMapper">
+
+	<resultMap id="cursoResultMap" type="jsfspring.model.Curso">
+		<constructor>
+			<idArg column="id_curso" javaType="Long"/>
+			<arg column="activo" javaType="Boolean" />
+			<arg column="titulo" javaType="String"/>
+			<arg column="nivel" javaType="String"/>
+			<arg column="horas" javaType="Integer"/>
+			<arg column="profesor" javaType="String"/>
+		</constructor>
+	</resultMap>
+
+
+	<select id="listarCursos" resultMap="cursoResultMap">
+		select <include refid="cursoColumns"/>
+		from cursos where activo=true
+	</select>
+	
+	<insert id="insert" parameterType="jsfspring.model.Curso" useGeneratedKeys="true" keyColumn="id_curso" keyProperty="id">
+		insert into cursos(activo,titulo,nivel,horas,profesor)
+		values (#{activo},#{titulo},#{nivel},#{horas},#{profesor})
+	</insert>
+
+	<sql id="cursoColumns">
+		id_curso, activo,titulo,nivel,horas,profesor
+	</sql>
+    
+</mapper>

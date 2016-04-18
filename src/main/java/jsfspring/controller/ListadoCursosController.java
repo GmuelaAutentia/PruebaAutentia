@@ -4,6 +4,7 @@ import jsfspring.dao.CursoMapper;
 import jsfspring.model.Curso;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
@@ -16,11 +17,17 @@ public class ListadoCursosController implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @Autowired
+    @ManagedProperty(value = "#{cursoMapper}")
     CursoMapper cursoMapper;
 
     private List<Curso> cursos;
 
+    @PostConstruct
+    public void init(){
+
+        this.cursos = cursoMapper.listarCursos();
+
+    }
 
     public CursoMapper getCursoMapper() {
 

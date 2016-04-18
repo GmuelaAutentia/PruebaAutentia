@@ -8,6 +8,7 @@
 
     <properties>
         <spring-version>4.2.5.RELEASE</spring-version>
+        <java.version>1.8</java.version>
         <sonar.jacoco.itreportpath>${project.build.directory}/jacoco-it.exec</sonar.jacoco.itreportpath>
         <sonar.jacoco.utreportpath>${project.build.directory}/jacoco.exec</sonar.jacoco.utreportpath>
     </properties>
@@ -120,16 +121,24 @@
         </dependency>
 
         <dependency>
-            <groupId>org.powermock</groupId>
-            <artifactId>powermock-api-mockito</artifactId>
-            <version>1.6.4</version>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-all</artifactId>
+            <version>1.3</version>
         </dependency>
-
     </dependencies>
 
     <build>
         <pluginManagement>
             <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.5.1</version>
+                    <configuration>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                    </configuration>
+                </plugin>
                 <plugin>
                     <groupId>org.sonarsource.scanner.maven</groupId>
                     <artifactId>sonar-maven-plugin</artifactId>
