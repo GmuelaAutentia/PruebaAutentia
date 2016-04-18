@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:include src="/resources/templates/header.xhtml" />
+
+<h:body>
+
+
+
+	<h:form id="formAltaCursos">
+
+		<ui:include src="/resources/templates/nav.xhtml" />
+
+		<h:panelGrid columns="2">
+			<p:outputLabel value="Activo " for="activo" />
+			<p:selectBooleanCheckbox value="#{altaCursosController.curso.activo}" id="activo" />
+
+			<p:outputLabel value="Profesor " for="profesor" />
+			<p:selectOneMenu value="#{altaCursosController.curso.profesor}" id="profesor" required="false">
+				<f:selectItem itemLabel="Selecciona un profesor..." itemValue="" />
+				<f:selectItems value="#{listadoProfesoresController.profesores}"
+					var="profesor" itemLabel="#{profesor.nombreCompleto}"
+					itemValue="#{profesor.nombreCompleto}" />
+			</p:selectOneMenu>
+
+			<p:outputLabel value="Título " for="titulo" />
+			<p:inputText value="#{altaCursosController.curso.titulo}" id="titulo" title="titulo" required="true"/>
+
+			<p:outputLabel value="Nivel " for="nivel" />
+			<p:selectOneMenu value="#{altaCursosController.curso.nivel}" id="nivel" required="true">
+				<f:selectItem itemLabel="Selecciona un nivel..." itemValue="" />
+				<f:selectItem itemLabel="Básico" itemValue="Básico" />
+				<f:selectItem itemLabel="Intermedio" itemValue="Intermedio" />
+				<f:selectItem itemLabel="Avanzado" itemValue="Avanzado" />
+			</p:selectOneMenu>
+
+			<p:outputLabel value="Horas" for="horas" />
+			<p:spinner id="horas" value="#{altaCursosController.curso.horas}" min="0" max="400" size="1" required="true"/>
+
+			<p:commandButton value="Añadir">
+				<f:ajax execute="activo profesor titulo nivel horas" listener="#{altaCursosController.darAltaCurso}" />
+			</p:commandButton>
+		</h:panelGrid>		
+	</h:form>	
+	
+</h:body>
+</html>

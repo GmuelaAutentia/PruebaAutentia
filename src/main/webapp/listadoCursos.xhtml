@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:include src="/resources/templates/header.xhtml" />
+
+<h:body>
+	<h:form>
+		<ui:include src="/resources/templates/nav.xhtml" />
+
+		<p:dataTable var="curso" value="#{listadoCursosController.cursos}"
+			rows="4" paginator="true" paginatorPosition="bottom" id="tablaPer">
+			<p:column headerText="Título" sortBy="#{curso.titulo}">
+				<h:outputText value="#{curso.titulo}" />
+			</p:column>
+
+			<p:column headerText="Nivel">
+				<h:outputText value="#{curso.nivel}" />
+			</p:column>
+
+			<p:column headerText="Horas">
+				<h:outputText value="#{curso.horas}" />
+			</p:column>
+		</p:dataTable>
+	</h:form>
+	
+	<p:messages id="mensaje" showDetail="true" autoUpdate="true" closable="true" />
+</h:body>
+</html>
