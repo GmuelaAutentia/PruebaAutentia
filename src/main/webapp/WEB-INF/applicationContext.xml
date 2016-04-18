@@ -15,7 +15,7 @@
 
 	<context:annotation-config />
 	
-	<context:component-scan base-package="jsfspring" />
+
 	
 	<tx:annotation-driven />
 	
@@ -33,7 +33,7 @@
 	<bean  id="springManagedTransactionFactory" class="org.mybatis.spring.transaction.SpringManagedTransactionFactory" />
 	
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="mapperLocations" value="classpath:**/*.xml" />
+		<property name="mapperLocations" value="classpath:*/dao/mappers/*.xml" />
 		<property name="dataSource" ref="dataSource" />
 		<property name="transactionFactory" ref="springManagedTransactionFactory" />
 	</bean>

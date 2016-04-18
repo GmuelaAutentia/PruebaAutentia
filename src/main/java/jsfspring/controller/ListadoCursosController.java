@@ -19,7 +19,6 @@ public class ListadoCursosController implements Serializable {
     @Autowired
     CursoMapper cursoMapper;
 
-    @Autowired
     private List<Curso> cursos;
 
 

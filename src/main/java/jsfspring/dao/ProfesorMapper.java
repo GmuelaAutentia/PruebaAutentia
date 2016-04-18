@@ -6,7 +6,6 @@ import org.springframework.stereotype.Repository;
 
 import jsfspring.model.Profesor;
 
-@Repository
 public interface ProfesorMapper {
 
 	List<Profesor> listarProfesores();

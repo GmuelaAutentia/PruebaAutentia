@@ -9,6 +9,7 @@ import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
 import jsfspring.dao.CursoMapper;
+import jsfspring.dao.impl.CursoMapperImpl;
 import jsfspring.model.Curso;
 import jsfspring.model.builder.CursoBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,12 +33,13 @@ public class AltaCursosController {
 	
 	public void darAltaCurso() throws IOException{
 
+        System.out.println(cursoMapper);
+
 		cursoBuilder = new CursoBuilder(this.titulo,this.nivel,this.horas);
 
-		Curso curso = cursoBuilder
-				.setActivo(this.activo)
-				.setProfesor(this.profesor)
-				.build();
+		Curso curso = cursoBuilder.setActivo(this.activo)
+                                  .setProfesor(this.profesor)
+				                  .build();
 			
 		cursoMapper.insert(curso);
 		FacesContext.getCurrentInstance().getExternalContext().redirect("listadoCursos.xhtml?i=1");
