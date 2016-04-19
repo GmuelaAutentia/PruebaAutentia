@@ -1,4 +1,4 @@
-package jsfspring.dao.impl;
+package jsfspring.dao.service;
 
 import java.io.Serializable;
 import java.util.List;
@@ -13,15 +13,16 @@ import jsfspring.bean.Profesor;
 @Repository
 public class ProfesorService implements ProfesorMapper, Serializable {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	@Autowired
-	ProfesorMapper profesorMapper;
+    @Autowired
+    private transient ProfesorMapper profesorMapper;
 
-	@Transactional
-	public List<Profesor> getProfesores() {
-		
-		return profesorMapper.getProfesores();
-	}
+    @Override
+    @Transactional
+    public List<Profesor> getProfesores() {
+
+        return profesorMapper.getProfesores();
+    }
 
 }

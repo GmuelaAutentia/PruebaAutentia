@@ -31,4 +31,11 @@ public class CursoMapperIT {
         assertThat(listaCursos.size(), is(greaterThan(1)));
     }
 
+    @Test
+    public void shouldInsertOneCursoIntoDBWhenCallingInsert(){
+
+
+
+    }
+
 }

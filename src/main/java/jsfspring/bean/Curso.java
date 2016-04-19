@@ -5,78 +5,78 @@ import java.io.Serializable;
 
 public class Curso implements Serializable {
 
-	private Long id;
-	private Boolean activo;
-	private String titulo;
-	private String nivel;
-	private Integer horas;
-	private String profesor;
+    private Long id;
+    private Boolean activo;
+    private String titulo;
+    private String nivel;
+    private Integer horas;
+    private String profesor;
 
-	public Curso(Long id, Boolean activo, String titulo, String nivel, Integer horas, String profesor) {
-		this.id = id;
-		this.activo = activo;
-		this.titulo = titulo;
-		this.nivel = nivel;
-		this.horas = horas;
-		this.profesor = profesor;
-	}
+    public Curso(Long id, Boolean activo, String titulo, String nivel, Integer horas, String profesor) {
+        this.id = id;
+        this.activo = activo;
+        this.titulo = titulo;
+        this.nivel = nivel;
+        this.horas = horas;
+        this.profesor = profesor;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public Long getId() {
-		return id;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public boolean isActivo() {
+    public boolean isActivo() {
 
-		return activo;
-	}
+        return activo;
+    }
 
-	public void setActivo(boolean activo) {
+    public void setActivo(boolean activo) {
 
-		this.activo = activo;
-	}
+        this.activo = activo;
+    }
 
-	public String getProfesor() {
+    public String getProfesor() {
 
-		return profesor;
-	}
+        return profesor;
+    }
 
-	public void setProfesor(String profesor) {
+    public void setProfesor(String profesor) {
 
-		this.profesor = profesor;
-	}
+        this.profesor = profesor;
+    }
 
-	public String getTitulo() {
+    public String getTitulo() {
 
-		return titulo;
-	}
+        return titulo;
+    }
 
-	public void setTitulo(String titulo) {
+    public void setTitulo(String titulo) {
 
-		this.titulo = titulo;
-	}
+        this.titulo = titulo;
+    }
 
-	public String getNivel() {
+    public String getNivel() {
 
-		return nivel;
-	}
+        return nivel;
+    }
 
-	public void setNivel(String nivel) {
+    public void setNivel(String nivel) {
 
-		this.nivel = nivel;
-	}
+        this.nivel = nivel;
+    }
 
-	public Integer getHoras() {
+    public Integer getHoras() {
 
-		return horas;
-	}
+        return horas;
+    }
 
-	public void setHoras(Integer horas) {
+    public void setHoras(Integer horas) {
 
-		this.horas = horas;
-	}
+        this.horas = horas;
+    }
 
 }

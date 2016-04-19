@@ -6,7 +6,7 @@ import jsfspring.bean.Curso;
 
 public interface CursoMapper {
 
-	List<Curso> getListaCursos();
-	
-	void insert(Curso curso);
+    List<Curso> getListaCursos();
+
+    void insert(Curso curso);
 }

@@ -11,7 +11,7 @@ import static org.mockito.Mockito.*;
 
 import java.util.ArrayList;
 import jsfspring.dao.CursoMapper;
-import jsfspring.dao.impl.CursoService;
+import jsfspring.dao.service.CursoService;
 import jsfspring.bean.Curso;
 
 public class CursoMapperTest {
@@ -38,10 +38,6 @@ public class CursoMapperTest {
 
 	@Test
 	public void testGetListaCursos() {
-
-		ArrayList<Curso> lista = new ArrayList<Curso>();
-
-		when(cursoMapper.getListaCursos()).thenReturn(lista);
 
 		sut.getListaCursos();
 

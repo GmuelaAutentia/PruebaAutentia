@@ -1,15 +1,14 @@
 package jsfspring.controller;
 
-import java.io.IOException;
+import jsfspring.bean.Curso;
+import jsfspring.bean.builder.CursoBuilder;
+import jsfspring.dao.CursoMapper;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
-
-import jsfspring.dao.CursoMapper;
-import jsfspring.bean.Curso;
-import jsfspring.bean.builder.CursoBuilder;
+import java.io.IOException;
 
 
 @ManagedBean(name = "altaCursosController")
@@ -17,87 +16,87 @@ import jsfspring.bean.builder.CursoBuilder;
 public class AltaCursosController {
 
     @ManagedProperty(value = "#{cursoMapper}")
-	private CursoMapper cursoMapper;
+    private CursoMapper cursoMapper;
 
-	private CursoBuilder cursoBuilder;
+    private CursoBuilder cursoBuilder;
 
-	private boolean activo;
-	private String titulo;
-	private String nivel;
-	private Integer horas;
-	private String profesor;
+    private boolean activo;
+    private String titulo;
+    private String nivel;
+    private Integer horas;
+    private String profesor;
 
 
-	public void darAltaCurso() throws IOException{
+    public void darAltaCurso() throws IOException{
 
-		cursoBuilder = new CursoBuilder(this.titulo, this.nivel, this.horas);
+        cursoBuilder =   new CursoBuilder(this.titulo, this.nivel, this.horas);
 
-		Curso curso = cursoBuilder.setActivo(this.activo)
+        Curso curso = cursoBuilder.setActivo(this.activo)
                                   .setProfesor(this.profesor)
-				                  .build();
+                                  .build();
 
-		cursoMapper.insert(curso);
-		FacesContext.getCurrentInstance().getExternalContext().redirect("listadoCursos.xhtml?i=1");
+        cursoMapper.insert(curso);
+        FacesContext.getCurrentInstance().getExternalContext().redirect("listadoCursos.xhtml?i=1");
 
-	}
+    }
 
-	public CursoMapper getCursoMapper() {
+    public CursoMapper getCursoMapper() {
 
-		return cursoMapper;
-	}
+        return cursoMapper;
+    }
 
-	public void setCursoMapper(CursoMapper cursoMapper) {
+    public void setCursoMapper(CursoMapper cursoMapper) {
 
-		this.cursoMapper = cursoMapper;
-	}
+        this.cursoMapper = cursoMapper;
+    }
 
-	public String getProfesor() {
+    public String getProfesor() {
 
         return profesor;
-	}
+    }
 
-	public void setProfesor(String profesor) {
+    public void setProfesor(String profesor) {
 
         this.profesor = profesor;
-	}
+    }
 
-	public String getTitulo() {
+    public String getTitulo() {
 
         return titulo;
-	}
+    }
 
-	public void setTitulo(String titulo) {
+    public void setTitulo(String titulo) {
 
         this.titulo = titulo;
-	}
+    }
 
-	public String getNivel() {
+    public String getNivel() {
 
         return nivel;
-	}
+    }
 
-	public void setNivel(String nivel) {
+    public void setNivel(String nivel) {
 
         this.nivel = nivel;
-	}
+    }
 
-	public Integer getHoras() {
+    public Integer getHoras() {
 
         return horas;
-	}
+    }
 
-	public void setHoras(Integer horas) {
+    public void setHoras(Integer horas) {
 
         this.horas = horas;
-	}
+    }
 
-	public boolean isActivo() {
+    public boolean isActivo() {
 
         return activo;
-	}
+    }
 
-	public void setActivo(boolean activo) {
+    public void setActivo(boolean activo) {
 
         this.activo = activo;
-	}
+    }
 }

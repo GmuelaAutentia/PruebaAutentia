@@ -6,5 +6,5 @@ import jsfspring.bean.Profesor;
 
 public interface ProfesorMapper {
 
-	List<Profesor> getProfesores();
+    List<Profesor> getProfesores();
 }

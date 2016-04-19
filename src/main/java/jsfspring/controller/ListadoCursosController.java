@@ -17,7 +17,7 @@ public class ListadoCursosController implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @ManagedProperty(value = "#{cursoMapper}")
-    CursoMapper cursoMapper;
+    transient CursoMapper cursoMapper;
 
     private List<Curso> cursos;
 
@@ -41,11 +41,6 @@ public class ListadoCursosController implements Serializable {
     public List<Curso> getCursos() {
 
         return cursos;
-    }
-
-    public void setCursos(List<Curso> cursos) {
-
-        this.cursos = cursoMapper.getListaCursos();
     }
 
 }

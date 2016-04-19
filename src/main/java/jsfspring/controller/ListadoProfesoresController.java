@@ -17,7 +17,7 @@ public class ListadoProfesoresController implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @ManagedProperty(value = "#{profesorMapper}")
-    ProfesorMapper profesorMapper;
+    transient ProfesorMapper profesorMapper;
 
     private List<Profesor> profesores;
 
