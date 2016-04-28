@@ -8,7 +8,7 @@
 			<arg column="titulo" javaType="String"/>
 			<arg column="nivel" javaType="String"/>
 			<arg column="horas" javaType="Integer"/>
-			<arg column="profesor" javaType="String"/>
+			<arg column="id_profesor" javaType="Long"/>
 		</constructor>
 	</resultMap>
 
@@ -19,12 +19,12 @@
 	</select>
 	
 	<insert id="insert" parameterType="jsfspring.bean.Curso" useGeneratedKeys="true" keyColumn="id_curso" keyProperty="id">
-		insert into cursos(activo,titulo,nivel,horas,profesor)
-		values (#{activo},#{titulo},#{nivel},#{horas},#{profesor})
+		insert into cursos(activo,titulo,nivel,horas,id_profesor)
+		values (#{activo},#{titulo},#{nivel},#{horas},#{idProfesor})
 	</insert>
 
 	<sql id="cursoColumns">
-		id_curso, activo,titulo,nivel,horas,profesor
+		id_curso, activo,titulo,nivel,horas,id_profesor
 	</sql>
     
 </mapper>

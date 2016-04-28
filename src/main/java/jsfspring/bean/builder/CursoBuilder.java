@@ -9,17 +9,18 @@ public class CursoBuilder {
     private String titulo;
     private String nivel;
     private Integer horas;
-    private String profesor;
+    private Long idProfesor;
 
-    public CursoBuilder(String titulo, String nivel, Integer horas) {
+    public CursoBuilder(String titulo, String nivel, Integer horas, Long idProfesor) {
         this.titulo = titulo;
         this.nivel = nivel;
         this.horas = horas;
+        this.idProfesor = idProfesor;
     }
 
     public Curso build(){
 
-        return new Curso(this.id, this.activo,this.titulo,this.nivel,this.horas,this.profesor);
+        return new Curso(this.id, this.activo,this.titulo,this.nivel,this.horas,this.idProfesor);
 
     }
 
@@ -59,12 +60,12 @@ public class CursoBuilder {
         return this;
     }
 
-    public String getProfesor() {
-        return profesor;
+    public Long getIdProfesor() {
+        return idProfesor;
     }
 
-    public CursoBuilder setProfesor(String profesor) {
-        this.profesor = profesor;
+    public CursoBuilder setIdProfesor(Long idProfesor) {
+        this.idProfesor = idProfesor;
         return this;
     }
 }

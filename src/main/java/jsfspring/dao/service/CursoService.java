@@ -11,7 +11,9 @@ import java.util.List;
 @Repository
 public class CursoService implements CursoMapper, Serializable {
 
-    private transient CursoMapper cursoMapper;
+    private static final long serialVersionUID = 1L;
+
+    private CursoMapper cursoMapper;
 
     private CursoService() {
 

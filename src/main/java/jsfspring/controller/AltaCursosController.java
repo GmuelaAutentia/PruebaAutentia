@@ -24,15 +24,14 @@ public class AltaCursosController {
     private String titulo;
     private String nivel;
     private Integer horas;
-    private String profesor;
+    private Long idProfesor;
 
 
     public void darAltaCurso() throws IOException{
 
-        cursoBuilder =   new CursoBuilder(this.titulo, this.nivel, this.horas);
+        cursoBuilder =   new CursoBuilder(this.titulo, this.nivel, this.horas, this.idProfesor);
 
         Curso curso = cursoBuilder.setActivo(this.activo)
-                                  .setProfesor(this.profesor)
                                   .build();
 
         cursoMapper.insert(curso);
@@ -50,14 +49,14 @@ public class AltaCursosController {
         this.cursoMapper = cursoMapper;
     }
 
-    public String getProfesor() {
+    public Long getIdProfesor() {
 
-        return profesor;
+        return idProfesor;
     }
 
-    public void setProfesor(String profesor) {
+    public void setIdProfesor(Long idProfesor) {
 
-        this.profesor = profesor;
+        this.idProfesor = idProfesor;
     }
 
     public String getTitulo() {

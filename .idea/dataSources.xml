@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="2281391724">
+  <component name="DataSourceManagerImpl" format="xml" hash="4103007488">
     <data-source source="LOCAL" name="MySQL - autentia@localhost" uuid="091ef850-6e3b-426a-9cda-22f2c411806e">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>

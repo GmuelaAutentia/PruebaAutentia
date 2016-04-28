@@ -10,15 +10,15 @@ public class Curso implements Serializable {
     private String titulo;
     private String nivel;
     private Integer horas;
-    private String profesor;
+    private Long idProfesor;
 
-    public Curso(Long id, Boolean activo, String titulo, String nivel, Integer horas, String profesor) {
+    public Curso(Long id, Boolean activo, String titulo, String nivel, Integer horas, Long idProfesor) {
         this.id = id;
         this.activo = activo;
         this.titulo = titulo;
         this.nivel = nivel;
         this.horas = horas;
-        this.profesor = profesor;
+        this.idProfesor = idProfesor;
     }
 
     public void setId(Long id) {
@@ -39,14 +39,14 @@ public class Curso implements Serializable {
         this.activo = activo;
     }
 
-    public String getProfesor() {
+    public Long getIdProfesor() {
 
-        return profesor;
+        return idProfesor;
     }
 
-    public void setProfesor(String profesor) {
+    public void setIdProfesor(Long idProfesor) {
 
-        this.profesor = profesor;
+        this.idProfesor = idProfesor;
     }
 
     public String getTitulo() {

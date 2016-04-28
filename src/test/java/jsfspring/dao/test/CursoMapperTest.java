@@ -1,5 +1,8 @@
 package jsfspring.dao.test;
 
+import jsfspring.bean.Curso;
+import jsfspring.dao.CursoMapper;
+import jsfspring.dao.service.CursoService;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -7,12 +10,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import static org.mockito.Mockito.*;
-
-import java.util.ArrayList;
-import jsfspring.dao.CursoMapper;
-import jsfspring.dao.service.CursoService;
-import jsfspring.bean.Curso;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 public class CursoMapperTest {
 
@@ -37,16 +36,19 @@ public class CursoMapperTest {
 	}
 
 	@Test
-	public void testGetListaCursos() {
+	public void shouldCallGetListaCursosCorrectly() {
 
 		sut.getListaCursos();
-
 		verify(cursoMapper).getListaCursos();
 
 	}
 
 	@Test
-	public void testInsertarCursos() {
+	public void shouldCallInsertCorrectly() {
+
+		Curso curso = mock(Curso.class);
+		sut.insert(curso);
+		verify(cursoMapper).insert(curso);
 
 	}
 

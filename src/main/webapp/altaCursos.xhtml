@@ -21,11 +21,11 @@
             <p:selectBooleanCheckbox value="#{altaCursosController.activo}" id="activo"/>
 
             <p:outputLabel value="Profesor " for="profesor"/>
-            <p:selectOneMenu value="#{altaCursosController.profesor}" id="profesor" required="false">
+            <p:selectOneMenu value="#{altaCursosController.idProfesor}" id="profesor" required="true">
                 <f:selectItem itemLabel="Selecciona un profesor..." itemValue=""/>
                 <f:selectItems value="#{listadoProfesoresController.profesores}"
                                var="profesor" itemLabel="#{profesor.nombreCompleto}"
-                               itemValue="#{profesor.nombreCompleto}"/>
+                               itemValue="#{profesor.id}"/>
             </p:selectOneMenu>
 
             <p:outputLabel value="Título " for="titulo"/>
